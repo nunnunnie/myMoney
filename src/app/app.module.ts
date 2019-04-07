@@ -6,11 +6,17 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { AdddataPage } from '../pages/adddata/adddata';
+import { EditdataPage } from '../pages/editdata/editdata';
+import { SQLite } from '@ionic-native/sqlite/ngx';
+import { Toast } from '@ionic-native/toast/ngx';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    AdddataPage,
+    EditdataPage
   ],
   imports: [
     BrowserModule,
@@ -19,12 +25,19 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    AdddataPage,
+    EditdataPage
   ],
   providers: [
-    StatusBar,
+    StatusBar, 
     SplashScreen,
+    SQLite, 
+    Toast,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
+  
+  
+
   ]
 })
 export class AppModule {}
