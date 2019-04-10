@@ -8,8 +8,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AdddataPage } from '../pages/adddata/adddata';
 import { EditdataPage } from '../pages/editdata/editdata';
-import { SQLite } from '@ionic-native/sqlite/ngx';
-import { Toast } from '@ionic-native/toast/ngx';
+import { SQLite } from '@ionic-native/sqlite';
+import { Toast } from '@ionic-native/toast';
 
 @NgModule({
   declarations: [
@@ -30,14 +30,15 @@ import { Toast } from '@ionic-native/toast/ngx';
     EditdataPage
   ],
   providers: [
-    StatusBar, 
-    SplashScreen,
-    SQLite, 
+    StatusBar,
     Toast,
+    SQLite,
+    SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
-  
-  
+    
 
+
+    
   ]
 })
 export class AppModule {}
